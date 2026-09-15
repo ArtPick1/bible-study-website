@@ -6,7 +6,8 @@ document.querySelector('.menu-button')?.addEventListener('click', event => {
 
 const studyRoot = document.querySelector('[data-study-options]');
 if (studyRoot) {
-  const verseStudies = JSON.parse(document.querySelector('#study-data').textContent);
+  const parsedStudyData = JSON.parse(document.querySelector('#study-data').textContent);
+  const verseStudies = Array.isArray(parsedStudyData) ? parsedStudyData : [parsedStudyData];
   const tabs = studyRoot.querySelector('.option-tabs');
   const panel = studyRoot.querySelector('.option-content');
   const verseLabel = studyRoot.querySelector('[data-selected-verse]');

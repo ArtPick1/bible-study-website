@@ -84,8 +84,8 @@ footer{background:linear-gradient(rgba(17,29,37,.93),rgba(17,29,37,.97)),url("pr
 .translation{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
 .option-panel h2{margin-top:0}
 .selected-verse-label{color:var(--burgundy);font-size:1rem;text-transform:uppercase;letter-spacing:.1em;margin:0 0 8px}
-.option-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
-.option-tabs button{border:1px solid #c7b89f;background:#f7f0e3;padding:10px 14px;font:600 .86rem Georgia;cursor:pointer}
+.option-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.option-tabs button{border:1px solid #c7b89f;background:#f7f0e3;padding:8px 11px;font:600 .8rem Georgia;cursor:pointer}
 .option-tabs button[aria-selected="true"]{background:var(--navy);color:white;border-color:var(--navy)}
 .option-content{background:white;border:1px solid #ded4c3;padding:28px;min-height:230px}
 .option-content h3{font-size:1.7rem;margin-top:0;color:var(--burgundy)}
@@ -127,6 +127,8 @@ footer{background:linear-gradient(rgba(17,29,37,.93),rgba(17,29,37,.97)),url("pr
 .study-grid article{grid-template-columns:1fr}
 .featured-grid>blockquote{display:none}
 .page-hero h1{font-size:2.5rem}
+.option-tabs{gap:7px}
+.option-tabs button{padding:10px 12px;font-size:.82rem}
 }
 
 
