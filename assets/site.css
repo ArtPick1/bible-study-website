@@ -71,6 +71,7 @@ footer{background:linear-gradient(rgba(17,29,37,.93),rgba(17,29,37,.97)),url("pr
 .content-section{padding:34px 0}
 .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .path-card{display:block;background:white;border:1px solid #ded4c3;border-top:4px solid var(--gold);padding:25px;text-decoration:none;box-shadow:0 7px 20px rgba(46,35,20,.08)}
+.path-card .eyebrow{border-bottom:0;padding-bottom:0;margin-bottom:12px;line-height:1.35}
 .path-card h2{font-size:1.7rem;margin:4px 0}
 .path-card strong{color:var(--burgundy)}
 .passage-layout{display:grid;grid-template-columns:minmax(320px,44%) 1fr;gap:30px;align-items:start}
