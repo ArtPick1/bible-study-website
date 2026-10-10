@@ -16,4 +16,11 @@
     button.setAttribute('aria-expanded', parent.classList.contains('open'));
   }));
   document.addEventListener('click', () => document.querySelectorAll('.drop.open').forEach(drop => drop.classList.remove('open')));
+  const expectButton=document.querySelector('.what-expect-hotspot');
+  const expectBackdrop=document.querySelector('.expect-backdrop');
+  const closeExpect=()=>{if(!expectBackdrop)return;expectBackdrop.hidden=true;expectButton?.focus()};
+  expectButton?.addEventListener('click',()=>{if(!expectBackdrop)return;expectBackdrop.hidden=false;expectBackdrop.querySelector('.expect-x')?.focus()});
+  expectBackdrop?.querySelectorAll('.expect-x,.expect-close-button').forEach(button=>button.addEventListener('click',closeExpect));
+  expectBackdrop?.addEventListener('click',event=>{if(event.target===expectBackdrop)closeExpect()});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&expectBackdrop&&!expectBackdrop.hidden)closeExpect()});
 })();
