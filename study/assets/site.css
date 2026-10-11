@@ -132,4 +132,54 @@ footer{background:linear-gradient(rgba(17,29,37,.93),rgba(17,29,37,.97)),url("pr
 .option-tabs button{padding:10px 12px;font-size:.82rem}
 }
 
+/* Men’s Fellowship reading-section theme */
+:root{--navy:#161513;--ink:#29231c;--paper:#eee1c9;--paper2:#f7f0e3;--gold:#c38a2f;--burgundy:#7d2b20;--line:#bd8b3c;--muted:#706659}
+body{background:#e7ddcc;color:var(--ink)}
+.site-header{min-height:92px;background:linear-gradient(110deg,#0d0d0c,#1d1a16);border-bottom:1px solid #b77c22;box-shadow:0 4px 18px rgba(0,0,0,.3)}
+.header-inner{min-height:92px}
+.brand{text-transform:none;letter-spacing:0}
+.brand b{font-size:1.6rem;line-height:1.05;color:#fffaf0}
+.brand small{margin-top:5px;color:#d9a747;font-size:.78rem;letter-spacing:.02em;text-transform:none}
+#main-nav{align-items:stretch;gap:28px}
+#main-nav>a,#main-nav>.nav-dropdown>button{min-height:92px;display:flex;align-items:center;padding:8px 0;border:0;border-bottom:3px solid transparent;background:none;color:#fffaf0;font:inherit;font-size:.88rem;cursor:pointer;text-decoration:none;text-transform:none;letter-spacing:0}
+#main-nav>a:hover,#main-nav>a.active,#main-nav>.nav-dropdown>button:hover{color:#e6b34f;border-bottom-color:#e6b34f}
+.nav-dropdown{position:relative;display:flex}
+.dropdown-panel{position:absolute;right:0;top:calc(100% - 1px);z-index:30;display:none;width:280px;padding:17px;background:#171512;border:1px solid #b77c22;box-shadow:0 16px 30px rgba(0,0,0,.42);color:#f8edda;font-size:.9rem}
+.nav-dropdown.open .dropdown-panel{display:block}
+.contact-panel{padding:8px}
+.contact-panel a{display:block;padding:10px;text-decoration:none;border:0}
+.contact-panel a:hover{background:#2a241c}
+.contact-panel strong,.contact-panel small{display:block}
+.contact-panel small{color:#d9a747;margin-top:3px}
+.page-hero{padding:42px 0;background:linear-gradient(90deg,rgba(14,13,11,.96),rgba(27,22,17,.82)),url("prophet.png") center 38%/cover;color:#fffaf0;border-bottom:1px solid #b77c22}
+.page-hero h1{color:#fffaf0;font-size:3rem}
+.page-hero p{color:#eadfcd}
+.breadcrumbs{color:#d9a747}
+.breadcrumbs a{color:#fffaf0}
+.content-section{padding:42px 0 54px;background:linear-gradient(135deg,#f8f2e7,#ece0cb)}
+.section-title h2{color:#3a2a1d;border-color:#bd8b3c}
+.path-card{background:#fffaf0;border-color:#d3bf9a;border-top-color:#bd812a;box-shadow:0 8px 22px rgba(52,38,20,.1)}
+.path-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(52,38,20,.16)}
+.passage-layout{grid-template-columns:minmax(310px,38%) minmax(0,1fr);gap:32px}
+.scripture-card{position:sticky;top:20px;background:#fffaf0;border:1px solid #cdb88e;box-shadow:0 8px 24px rgba(48,34,18,.12)}
+.scripture-card h2,.option-panel h2{color:#3b2b1e}
+.option-panel{min-width:0}
+.option-content{background:#fffdf8;border-color:#d7c5a5;padding:clamp(24px,4vw,46px);font-family:Georgia,"Times New Roman",serif;font-size:1.08rem;line-height:1.72;box-shadow:0 8px 24px rgba(48,34,18,.09)}
+.option-content p,.option-content li{max-width:78ch}
+.option-content h3{color:#713124;border-bottom:1px solid #cfaa69;padding-bottom:14px}
+.option-content h4{color:#35271d}
+.option-tabs button{background:#f5ead7;border-color:#c9ae7d;border-radius:2px;color:#35271d}
+.option-tabs button[aria-selected="true"]{background:#29241e;border-color:#bd812a;color:#fff8ea;box-shadow:inset 0 -3px #bd812a}
+.verse[aria-selected="true"]{background:#f2e4ca;border-color:#bd812a;box-shadow:inset 4px 0 #7d2b20}
+.back-next,.chapter-navigation{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;margin-top:30px}
+.back-next a,.chapter-navigation a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 16px;border:1px solid #af792b;background:#2a251f;color:#fff8ea;text-decoration:none;font-weight:bold;text-align:center;border-radius:2px}
+.back-next a:last-child,.chapter-navigation a:last-child{justify-self:end}
+.chapter-navigation{padding-bottom:46px;margin-top:-18px}
+.chapter-navigation .button{margin:0;text-transform:none;letter-spacing:0}
+footer{background:linear-gradient(rgba(15,14,12,.96),rgba(15,14,12,.98)),url("prophet.png") center/cover;border-top:1px solid #b77c22}
+.footer-grid nav{flex-wrap:wrap;gap:10px 22px;justify-content:center}
+.footer-grid nav a{text-transform:none;letter-spacing:0;font-size:.76rem}
+@media(max-width:1050px){#main-nav{gap:17px}.brand b{font-size:1.25rem}}
+@media(max-width:850px){.site-header,.header-inner{min-height:78px}.header-inner nav{top:78px;right:14px;width:min(340px,calc(100vw - 28px));padding:10px;border:1px solid #b77c22}.header-inner nav.open{display:flex}.header-inner nav>a,.header-inner nav>.nav-dropdown>button{min-height:auto;width:100%;padding:12px;border-bottom:1px solid #3b3228}.nav-dropdown{display:block}.dropdown-panel{position:static;width:100%;box-shadow:none}.passage-layout{grid-template-columns:1fr}.scripture-card{position:static}.back-next,.chapter-navigation{grid-template-columns:1fr}.back-next a:last-child,.chapter-navigation a:last-child{justify-self:stretch}.back-next span{display:none}.footer-grid nav{flex-direction:column;align-items:flex-start}}
+
 
