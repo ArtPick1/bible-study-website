@@ -36,9 +36,26 @@ if (studyRoot) {
   const tabs = studyRoot.querySelector('.option-tabs');
   const panel = studyRoot.querySelector('.option-content');
   const verseLabel = studyRoot.querySelector('[data-selected-verse]');
-  const showOption = (option, button) => {
+  const passage = document.querySelector('main h1')?.textContent.trim().match(/^(.+?) (\d+):\d+/);
+  const interlinearBooks = {Habakkuk: 'habakkuk'};
+  const showOption = (option, button, verse) => {
     tabs.querySelectorAll('button').forEach(item => item.setAttribute('aria-selected', String(item === button)));
-    panel.innerHTML = `<h3>${option.title}</h3>${option.content}`;
+    let content = option.content;
+    const book = passage && Object.hasOwn(interlinearBooks, passage[1]) && interlinearBooks[passage[1]];
+    if (/^9:?\s+WORDS$/i.test(option.title) && book && /^\d+(?:[–-]\d+)?$/.test(verse)) {
+      const [first, last = first] = verse.split(/[–-]/).map(Number);
+      const links = [];
+      for (let number = first; number <= last; number++) {
+        const label = 'View Original Language — Bible Hub Interlinear';
+        const reference = first === last ? '' : ` (${passage[1]} ${passage[2]}:${number})`;
+        links.push(`<p><a href="https://biblehub.com/interlinear/${book}/${passage[2]}-${number}.htm" target="_blank" rel="noopener noreferrer">${label}${reference}</a></p>`);
+      }
+      const reference = /<(h[345]|p)\b[^>]*>(?:Passage: )?Habakkuk \d+:\d+(?:[^<]|<br>)*<\/\1>/i;
+      content = reference.test(content)
+        ? content.replace(reference, heading => heading + links.join(''))
+        : `<p class="study-reference">${passage[1]} ${passage[2]}:${verse}</p>${links.join('')}${content}`;
+    }
+    panel.innerHTML = `<h3>${option.title}</h3>${content}`;
     panel.focus();
   };
   const showVerse = verse => {
@@ -53,9 +70,9 @@ if (studyRoot) {
       button.textContent = option.title;
       button.setAttribute('role', 'tab');
       button.setAttribute('aria-selected', String(index === 0));
-      button.addEventListener('click', () => showOption(option, button));
+      button.addEventListener('click', () => showOption(option, button, verse));
       tabs.append(button);
-      if (index === 0) showOption(option, button);
+      if (index === 0) showOption(option, button, verse);
     });
   };
   document.querySelectorAll('.verse').forEach(button => button.addEventListener('click', () => showVerse(button.dataset.verse)));
